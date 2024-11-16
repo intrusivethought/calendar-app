@@ -1,0 +1,14 @@
+/* src/components/DayCell.css */
+
+.day-cell {
+    padding: 8px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  
+  .day-number {
+    font-weight: bold;
+    color: #555;
+  }
+  

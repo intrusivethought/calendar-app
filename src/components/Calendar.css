@@ -1,0 +1,376 @@
+/* General Styles for Calendar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  .calendar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    min-width: 600px;
+    min-height: 600px;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+
+  /* Style for current month days */
+.current-month {
+    color: black; /* Normal color for current month's days */
+  }
+  
+  /* Style for gray days (previous and next month days) */
+  .gray-day {
+    color: #d3d3d3; /* Light gray color for spillover days */
+    background-color: #f0f0f0; /* Optional: Set background color to make gray days distinguishable */
+  }
+  
+  
+  /* Container for the navigation buttons and month name */
+  .month-navigation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;  /* Fixed margin between header and buttons */
+    margin-bottom: 20px; /* Fixed space between the month name and the calendar table */
+  }
+  
+  /* Style for the month name header */
+  .month-name {
+    font-size: 2rem; /* Font size for the month name */
+    font-weight: bold; /* Make it bold */
+    text-align: center; /* Center the text */
+    margin: 0 20px; /* Space between the month name and the buttons */
+    width: 200px; /* Ensure enough space for the month name */
+  }
+  
+  /* Style for the navigation buttons */
+  .nav-button {
+    font-size: 1.5rem;
+    background-color: #f1f1f1;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin: 0 10px; /* Space between buttons */
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.2s;
+  }
+  
+  .nav-button:hover {
+    background-color: #e1e1e1;
+  }
+  
+  /* Ensuring fixed margin between header and navigation in the week, day, and month views */
+  h1 {
+    margin-bottom: 20px; /* Fixed space below the header */
+    font-size: 2rem;
+    text-align: center;
+  }
+  
+  .scrollable-week-view {
+    display: flex;
+    flex-direction: row;
+    max-height: 80vh;
+    overflow-y: auto;
+    position: relative;
+  }
+  
+  /* Time labels container for week view */
+  .time-labels {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    margin-right: 10px;
+    font-size: 0.8rem;
+    color: #a0a0a0;
+    text-align: right;
+    width: 50px;
+  }
+  
+  .time-label {
+    height: 20px;
+    line-height: 40px;
+    margin-top: 20px;
+  }
+  
+  /* Day View - Table Layout */
+  .calendar-table {
+    width: 100%;
+    height: 100%;
+    border-collapse: collapse;
+  }
+  
+  .day-header {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 20px;
+    background-color: #f0f0f0;
+  }
+  
+  .hour-column {
+    width: 100px;
+    padding: 0;
+    vertical-align: top;
+  }
+  
+  .event-column {
+    padding: 0;
+    vertical-align: top;
+  }
+  
+  .hour-cell {
+    height: 40px;
+    text-align: center;
+    border-top: 1px solid #e0e0e0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .event-cell {
+    height: 40px;
+    overflow: hidden;
+    border-top: 1px solid #e0e0e0;
+    padding: 0;
+  }
+  
+  .event {
+    background-color: #f4f4f4;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Month view table cell styling */
+  .calendar-table th, .calendar-table td {
+    padding: 8px;
+    min-width: 100px;
+    height: 80px;
+    vertical-align: top;
+    position: relative;
+  }
+  
+  /* Week view table row height */
+  .scrollable-week-view .calendar-table th,
+  .scrollable-week-view .calendar-table td {
+    height: 40px;
+  }
+ 
+/* Scrollable Day View Layout */
+.scrollable-day-view {
+    display: flex; /* Align time labels and table horizontally */
+    flex-direction: row;
+    max-height: 80vh;
+    overflow-y: auto;
+    position: relative;
+    width: 100%;
+    padding: 20px;
+  }
+  
+  /* Day Header for the Date (first row of the table) */
+  .day-header {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 20px;
+    background-color: #f0f0f0;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  /* Time labels for day view (left of the table) */
+  .time-labels {
+    display: flex;
+    flex-direction: column; /* Stack labels vertically */
+    justify-content: start; /* Align labels with rows */
+    margin-right: 10px; /* Space between labels and the table */
+    font-size: 0.8rem;
+    color: #a0a0a0;
+    text-align: right; /* Align text to the right */
+    width: 50px; /* Fixed width for labels */
+  }
+  
+  /* Styling for each time label */
+  .time-label {
+    height: 40px;
+    line-height: 40px;
+    margin-top: 20px;
+  }
+  
+  /* Event column for displaying events */
+  .event-column {
+    padding: 0;
+    vertical-align: top;
+  }
+  
+  /* Event cell for each hour */
+  .event-cell {
+    height: 40px;
+    overflow: hidden;
+    border-top: 1px solid #e0e0e0;
+    padding: 0;
+  }
+  
+  /* Event styling */
+  .event {
+    background-color: #f4f4f4;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Month View */
+  .calendar-table {
+    width: 100%;
+    height: 100%;
+    border-collapse: collapse;
+  }
+  
+  .calendar-table th,
+  .calendar-table td {
+    padding: 8px;
+    min-width: 100px;
+    height: 80px;
+    vertical-align: top;
+    position: relative;
+  }
+  
+  .calendar-table th {
+    background-color: #f0f0f0;
+  }
+  
+  /* Set lighter border color for subtle grid lines */
+  .calendar-table th, .calendar-table td {
+    border: 1px solid #e0e0e0;
+  }
+  
+   
+  /* Half-hour horizontal line styling in week view only */
+  .scrollable-week-view .calendar-table td::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: #c0c0c0;
+    position: absolute;
+    top: 50%;
+    left: 0;
+  }
+  
+  /* Styling for days from the previous/next month in month view */
+  .prev-month,
+  .next-month {
+    color: lightgray;
+    font-size: 1.2rem;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+  }
+  
+  /* Styling for current month cells */
+  .current-month {
+    font-size: 1.2rem;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    color: black;
+  }
+  
+  /* Modal styling */
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 300px;
+  }
+  
+  button {
+    margin-top: 10px;
+  }
+  
+  input {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0;
+  }
+  
+  /* Ensuring fixed margin between header and navigation buttons */
+  .month-navigation {
+    margin-top: 20px;  /* Fixed spacing between the header and month navigation buttons */
+    margin-bottom: 20px; /* Consistent spacing below the month header */
+  }
+  
+  .event-stripe {
+    background-color: #f4f4f4;
+    padding: 5px;
+    margin: 3px 0;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    font-size: 0.8rem;
+  }
+
+  /* Modal overlay */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999; /* Ensure the modal is on top of the calendar */
+  }
+  
+  /* Modal content box */
+  .modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    width: 400px;
+    max-width: 90%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .modal-content input {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .modal-content button {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 10px;
+  }
+  
+  .modal-content button:hover {
+    background-color: #0056b3;
+  }
+  

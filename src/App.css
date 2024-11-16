@@ -1,38 +1,28 @@
-.App {
+/* App.css */
+
+/* Adjust spacing between header and buttons */
+h1 {
+  font-size: 1.6rem; /* Adjust font size as needed */
+  color: #333; /* Set text color */
+  margin: 20px 0; /* Adjust spacing */
+  margin-left: 50px;
+  margin-bottom: 5px;
   text-align: center;
+  white-space: nowrap; /* Prevents text from wrapping to a new line */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Styles for the buttons at the top of the app */
+.nav-button {
+  font-size: 1.5rem;
+  background-color: #f1f1f1;
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin: 0 10px; /* Space between buttons */
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.2s;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.nav-button:hover {
+  background-color: #e1e1e1;
 }
